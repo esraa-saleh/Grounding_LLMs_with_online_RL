@@ -3,8 +3,11 @@ name = "grounding-llms-with-online-rl"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = "==3.10.8"
 dependencies = [
+    "torch",
+    "torchvision",
+    "numpy<1.24",
     "accelerate>=1.2.1",
     "blosc>=1.11.3",
     "colorama>=0.4.6",
@@ -13,7 +16,7 @@ dependencies = [
     "ipython>=8.37.0",
     "matplotlib>=3.10.7",
     "openai>=2.7.1",
-    "peft>=0.17.1",
+    "peft",
     "protobuf==3.20.*",
     "pyyaml>=6.0.3",
     "scipy>=1.15.3",
@@ -23,10 +26,19 @@ dependencies = [
     "tensorboard-plugin-wit==1.8.0",
     "tensorboardx==1.8",
     "termcolor>=3.2.0",
-    "torch>1.8.1",
     "torchaudio>=2.9.0",
     "torchvision>=0.24.0",
     "tqdm==4.64.0",
     "transformers>=4.57.1",
     "wandb>=0.22.3",
+    "babyai",
+    "gym-minigrid",
+    "babyai_text",
+    "lamorel"
 ]
+
+[tool.uv.sources]
+babyai = { path = "babyai-text/babyai", editable = true }
+gym-minigrid = {path = "babyai-text/gym-minigrid", editable = true }
+babyai_text = {path = "babyai-text", editable = true }
+lamorel = {path = "lamorel/lamorel", editable = true}
